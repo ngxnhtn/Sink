@@ -2,7 +2,7 @@
 const { title, description, image } = useAppConfig()
 
 useSeoMeta({
-  title: `${title} - ${description}`,
+  title: `rút gọn link của eddie`,
   description,
   ogType: 'website',
   ogTitle: title,

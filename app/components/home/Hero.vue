@@ -1,9 +1,6 @@
 <script setup>
 import { AreaChart } from 'lucide-vue-next'
-import { GitHubIcon } from 'vue3-simple-icons'
 import heroImg from '@/assets/images/hero.svg?raw'
-
-const { title, description, github } = useAppConfig()
 </script>
 
 <template>
@@ -16,17 +13,10 @@ const { title, description, github } = useAppConfig()
   >
     <div>
       <h1
-        class="
-          text-5xl font-bold
-          lg:text-6xl lg:tracking-tight
-          xl:text-7xl xl:tracking-tighter
-        "
+        class="text-6xl font-bold"
       >
-        {{ title }}
+        Rút gọn Link - Eddie
       </h1>
-      <p class="mt-4 max-w-xl text-lg text-slate-600">
-        {{ description }}
-      </p>
       <div
         class="
           mt-6 flex flex-col gap-3
@@ -35,7 +25,7 @@ const { title, description, github } = useAppConfig()
       >
         <HomeLink
           href="/dashboard"
-          target="_blank"
+          type="outline"
           title="Dashboard"
           class="flex items-center justify-center gap-1"
           rel="noopener"
@@ -43,21 +33,7 @@ const { title, description, github } = useAppConfig()
           <AreaChart
             class="h-5 w-5"
           />
-          {{ $t('dashboard.title') }}
-        </HomeLink>
-        <HomeLink
-          size="lg"
-          type="outline"
-          rel="noopener"
-          :href="github"
-          title="Github"
-          class="flex items-center justify-center gap-1"
-          target="_blank"
-        >
-          <GitHubIcon
-            class="h-5 w-5"
-          />
-          GitHub Repo
+          Quản trị
         </HomeLink>
       </div>
     </div>
@@ -68,7 +44,7 @@ const { title, description, github } = useAppConfig()
       "
     >
       <div
-        class="w-[512px]"
+        class="w-lg"
         v-html="heroImg"
       />
     </div>

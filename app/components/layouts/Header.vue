@@ -1,9 +1,8 @@
 <script setup>
 import { Ellipsis, X } from 'lucide-vue-next'
-import { GitHubIcon } from 'vue3-simple-icons'
 
 const showMenu = ref(false)
-const { title, github } = useAppConfig()
+const { title } = useAppConfig()
 </script>
 
 <template>
@@ -36,7 +35,7 @@ const { title, github } = useAppConfig()
                 class="h-full w-full rounded-full"
               >
             </span>
-            <span class="mx-2">{{ title }}</span>
+            <span class="mx-2">eddie</span>
           </a>
         </div>
 
@@ -90,19 +89,6 @@ const { title, github } = useAppConfig()
             >
               <a
                 class="
-                  mr-0 w-full cursor-pointer px-6 py-2 text-gray-700
-                  md:mr-2 md:w-auto md:px-3
-                  lg:mr-3
-                  dark:text-gray-300
-                "
-                href="/dashboard"
-                :title="`${title} Dashboard`"
-              >{{ $t('dashboard.title') }}</a>
-              <a
-                :href="github"
-                target="_blank"
-                title="Github"
-                class="
                   mr-2 inline-flex w-full items-center bg-gray-900 px-6 py-3
                   text-sm leading-4 font-medium text-white
                   hover:bg-gray-800
@@ -110,11 +96,9 @@ const { title, github } = useAppConfig()
                   focus:outline-hidden
                   md:w-auto md:rounded-full md:px-3 md:focus:ring-2
                 "
-              >
-                <GitHubIcon
-                  class="mr-1 h-5 w-5"
-                />
-                GitHub</a>
+                href="/dashboard"
+                :title="`${title} Dashboard`"
+              >Quản trị</a>
 
               <SwitchLanguage />
 

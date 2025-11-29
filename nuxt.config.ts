@@ -11,9 +11,11 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@vueuse/motion/nuxt',
     'shadcn-nuxt',
+    '@nuxtjs/robots',
   ],
   devtools: { enabled: true },
   css: ['~/assets/css/tailwind.css'],
+  site: { indexable: false },
   colorMode: {
     classSuffix: '',
   },

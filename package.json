@@ -26,6 +26,7 @@
   "dependencies": {
     "@intlify/message-compiler": "^11.1.12",
     "@number-flow/vue": "^0.4.8",
+    "@nuxtjs/robots": "^5.5.6",
     "@tanstack/vue-table": "^8.21.3",
     "@unovis/ts": "^1.6.1",
     "@unovis/vue": "^1.6.1",
