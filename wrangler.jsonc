@@ -26,5 +26,22 @@
       "binding": "KV",
       "id": "bf711fae711a4f89a3c920dcd419471a" // IMPORTANT: Change this to your KV namespace ID
     }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "routes": [
+    {
+      "pattern": "tien.ng",
+      "custom_domain": true
+    },
+    {
+      "pattern": "l.nhutien.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "x.tien.ng",
+      "custom_domain": true
+    }
   ]
 }
