@@ -1,52 +1,116 @@
-<script setup>
-import { AreaChart } from 'lucide-vue-next'
-import heroImg from '@/assets/images/hero.svg?raw'
+<script setup lang="ts">
+import { ArrowRight } from 'lucide-vue-next'
+import { GitHubIcon, XIcon } from 'vue3-simple-icons'
+import heroUrl from '@/assets/images/hero.svg?url'
+
+const { title, description, github, twitter } = useAppConfig()
 </script>
 
 <template>
-  <main
-    class="
-      grid place-items-center pt-8 pb-8
-      md:py-12
-      lg:grid-cols-2
-    "
-  >
-    <div>
-      <h1
-        class="text-6xl font-bold"
-      >
-        Rút gọn Link - Eddie
-      </h1>
-      <div
-        class="
-          mt-6 flex flex-col gap-3
-          sm:flex-row
-        "
-      >
-        <HomeLink
-          href="/dashboard"
-          type="outline"
-          title="Dashboard"
-          class="flex items-center justify-center gap-1"
-          rel="noopener"
-        >
-          <AreaChart
-            class="h-5 w-5"
-          />
-          Quản trị
-        </HomeLink>
-      </div>
-    </div>
+  <section>
     <div
       class="
-        hidden py-6
-        md:block
+        py-16
+        md:py-24
       "
     >
       <div
-        class="w-lg"
-        v-html="heroImg"
-      />
+        class="
+          mx-auto flex max-w-6xl flex-col items-center gap-12 px-6
+          lg:flex-row lg:justify-between
+        "
+      >
+        <div
+          class="
+            max-w-lg text-center
+            lg:text-left
+          "
+        >
+          <!-- Twitter Follow Badge -->
+          <a
+            :href="twitter"
+            target="_blank"
+            rel="noopener"
+            :title="$t('home.twitter.follow')"
+            class="
+              mx-auto mb-8 inline-flex w-fit items-center gap-2 rounded-full
+              border p-1 pr-3
+              lg:mx-0
+            "
+          >
+            <span
+              class="
+                flex items-center gap-1.5 rounded-full bg-muted px-2 py-1
+                text-xs
+              "
+            >
+              <XIcon aria-hidden="true" class="size-3" />
+            </span>
+            <span class="text-sm">{{ $t('home.twitter.follow') }}</span>
+            <span class="block h-4 w-px bg-border" />
+            <ArrowRight aria-hidden="true" class="size-4" />
+          </a>
+
+          <h1
+            class="
+              text-4xl font-medium text-balance
+              md:text-5xl
+              xl:text-6xl
+            "
+          >
+            {{ title }}
+          </h1>
+          <p class="mt-6 text-lg text-pretty text-muted-foreground">
+            {{ description }}
+          </p>
+
+          <div
+            class="
+              mt-10 flex flex-col items-center justify-center gap-2
+              sm:flex-row
+              lg:justify-start
+            "
+          >
+            <Button
+              as-child
+              size="lg"
+              class="px-5 text-base"
+            >
+              <NuxtLink to="/dashboard">
+                <span class="text-nowrap">{{ $t('dashboard.title') }}</span>
+              </NuxtLink>
+            </Button>
+            <Button
+              as-child
+              size="lg"
+              variant="ghost"
+              class="px-5 text-base"
+            >
+              <a
+                :href="github"
+                target="_blank"
+                :title="$t('layouts.footer.social.github')"
+                class="flex items-center gap-1.5"
+              >
+                <GitHubIcon aria-hidden="true" class="size-5" />
+                <span class="text-nowrap">{{ $t('home.hero.github_repo') }}</span>
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        <object
+          type="image/svg+xml"
+          :data="heroUrl"
+          class="
+            hidden aspect-square w-96 shrink-0
+            md:block
+            lg:w-[420px]
+          "
+          aria-label="Link sharing illustration"
+          suppressHydrationWarning
+        />
+      </div>
     </div>
-  </main>
+  </section>
 </template>
